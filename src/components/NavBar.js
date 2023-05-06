@@ -1,15 +1,12 @@
-import BlogForm from "./BlogForm";
-import BlogIndex from "./BlogIndex";
-import PostForm from "./PostForm";
+import { NavLink } from 'react-router-dom'
 
 function NavBar() {
 
     return (
-        <div>
-            <BlogForm />
-            <BlogIndex />
-            <PostForm />
-        </div>
+        <nav>
+            <NavLink to='/'>Blog Index</NavLink>
+            <NavLink to='/blog-form'> Blog Form</NavLink>
+        </nav>
     )
 }
 
