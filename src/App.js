@@ -4,6 +4,7 @@ import BlogForm from './components/BlogForm';
 import PostForm from './components/PostForm';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom'
+import BlogPosts from './components/BlogPosts';
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -14,15 +15,17 @@ function App() {
     .then((blogs) => setBlogs(blogs));
   }, [])
 
-
   return (
     <div className="App">
       <header className="App-header">
         <h1>Blogs</h1>
         <NavBar /> 
         <Routes>
-        <Route path='/' element={<BlogIndex blogs={blogs}/>}
-        ></Route>
+        <Route path='/' element={<BlogIndex blogs={blogs}/>}>
+        </Route>
+
+        <Route path='/' element={<BlogPosts/>} />
+
         <Route path='/blog-form' element={<BlogForm/>}/>
         <Route path='/post-form' element={<PostForm/>}/>
         </Routes>
