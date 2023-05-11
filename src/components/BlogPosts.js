@@ -1,27 +1,37 @@
 import { useState, useEffect } from "react";
+import { PostItem } from "./PostItem";
+import { useParams } from "react-router-dom";
 
 function BlogPosts () {
-const [posts, setPosts ] = useState([])
+    
+    const { id } = useParams();
+
+
+    const [posts, setPosts ] = useState([])
     useEffect(() =>{
         fetch('http://localhost:9292/posts')
         .then(r => r.json())
         .then((posts) => setPosts(posts));
-      }, [])
+      }, [id])
 
+      
 
-      function loadposts(posts){
+      function loadPosts(posts){
         return posts.map((post) => {
-            return <ul>
-                <li>{post.title}</li>
-                <li>{post.description}</li>
-                <li>{post.blog_id}</li>
-            </ul>
+
+            return <PostItem 
+            key={post.id}
+            post={post}
+            blogId={post.blog_id}
+            param={id}
+            />
+            
         })
       }
 
     return (
         <div>
-            {loadposts(posts)}
+            {loadPosts(posts)}
         </div>
     )
 }

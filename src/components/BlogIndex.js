@@ -1,24 +1,22 @@
-import BlogItem from "./BlogItem";
-import { Link } from "react-router-dom";
+import BlogItem from "./BlogItem"
+import { Link } from "react-router-dom"
 
-
-function BlogIndex ({blogs, setBlogId}) {
+function BlogIndex ({blogs}) {
 
     function listBlogs(blogs){
         return blogs.map(blog => {
+    
             return (
-                <Link to={`/${blog.id}`} >
+                <Link to={`/blog/${blog.id}`}>
                 <BlogItem 
                 key={blog.id}
                 blog={blog}
                 />
                 </Link>
             )
-
+    
         })
     }
-
-
 
     return (
         <div>

@@ -15,6 +15,8 @@ function App() {
     .then((blogs) => setBlogs(blogs));
   }, [])
 
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +26,7 @@ function App() {
         <Route path='/' element={<BlogIndex blogs={blogs}/>}>
         </Route>
 
-        <Route path='/' element={<BlogPosts/>} />
+        <Route path='/blog/:id' element={<BlogPosts/>} />
 
         <Route path='/blog-form' element={<BlogForm/>}/>
         <Route path='/post-form' element={<PostForm/>}/>
