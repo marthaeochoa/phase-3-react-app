@@ -61,11 +61,10 @@ label,input, .submit-button {
 
 
 button {
-
   align-items: center;
   font-size: medium;
-  height: 30px;
-  width: 80px;
+  height: 50px;
+  width: 90px;
 }
 
 .blog {
@@ -88,4 +87,17 @@ width: 380px;
   font-size: medium;
   height: 180px;
   width: 380px;
+}
+
+.cards {
+  text-align: left;
+  height: 380px;
+  width: 400px;
+  border-style: solid;
+  list-style-type: none;
+}
+
+.title {
+  color: black;
+
 }
