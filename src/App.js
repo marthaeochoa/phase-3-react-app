@@ -16,6 +16,12 @@ function App() {
   }, [])
 
 
+  function onAddBlog(newBlog){
+    setBlogs(blogs => {
+      return [...blogs, newBlog]
+    })
+  }
+
 
   return (
     <div className="App">
@@ -28,7 +34,7 @@ function App() {
 
         <Route path='/blog/:id' element={<BlogPosts/>} />
 
-        <Route path='/blog-form' element={<BlogForm/>}/>
+        <Route path='/blog-form' element={<BlogForm  onAddBlog={onAddBlog}/>}/>
         <Route path='/post-form' element={<PostForm/>}/>
         </Routes>
       </header>
