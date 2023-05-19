@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { PostItem } from "./PostItem";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import PostForm from "./PostForm";
 
 function BlogPosts () {
     
@@ -14,7 +15,11 @@ function BlogPosts () {
         .then((posts) => setPosts(posts));
       }, [id])
 
-      
+      function onAddPost(newPost){
+        setPosts(posts => {
+          return[...posts, newPost]
+        })
+      }
 
       function loadPosts(posts){
         return posts.map((post) => {
@@ -31,6 +36,7 @@ function BlogPosts () {
 
     return (
         <div>
+           <Link to={`/${id}/post-form`} component={<PostForm onAddPost={onAddPost}/>}><button>Create Post</button></Link>
             {loadPosts(posts)}
         </div>
     )

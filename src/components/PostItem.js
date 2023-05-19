@@ -8,7 +8,7 @@ export const PostItem = ({post, param, blogId}) => {
             return <div> <ul className='cards'>
             <li className='title'><h4>{title}</h4></li>
             <li>{description}</li>
-            <button>See comments</button>
+            <button className='comment-btn'>See comments</button>
         </ul>
         </div>
         } else {

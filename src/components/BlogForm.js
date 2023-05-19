@@ -7,7 +7,6 @@ function BlogForm({onAddBlog}) {
 
     function handleOnChange(event){
         const {name, value} = event.target;
-        console.log(formData)
         setFormData(formData => {
             return {
                 ...formData,

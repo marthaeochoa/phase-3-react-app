@@ -35,7 +35,7 @@ function App() {
         <Route path='/blog/:id' element={<BlogPosts/>} />
 
         <Route path='/blog-form' element={<BlogForm  onAddBlog={onAddBlog}/>}/>
-        <Route path='/post-form' element={<PostForm/>}/>
+        <Route path='/:id/post-form' element={<PostForm/>}/>
         </Routes>
       </header>
     </div>

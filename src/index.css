@@ -54,17 +54,33 @@ code {
     monospace;
 }
 
-label,input, .submit-button {
+label, input {
   display:flex;
   flex-direction:column;
+  margin-left: 45px;
 }
 
+.submit-button {
+  display: flex;
+  flex-direction: column;
+  margin-right: 300px;
+}
 
 button {
   align-items: center;
   font-size: medium;
   height: 50px;
-  width: 90px;
+  width: 180px;
+  border-style: none;
+  background-color: transparent;
+  text-decoration: underline;
+  padding: 10px 10px;
+}
+
+.comment-btn {
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: 50px;
 }
 
 .blog {
