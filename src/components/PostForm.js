@@ -2,13 +2,16 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 
 
+
 function PostForm ({onAddPost}){
-    const { blog_id } = useParams();
+    const { id } = useParams();
     const [formData, setFormData] = useState({
         title: "",
         description: "",
+        blog_id: parseInt(id)
     });
 
+    
     function handleOnChange(event){
         const {name, value} = event.target;
         console.log(formData)
@@ -21,11 +24,8 @@ function PostForm ({onAddPost}){
     }
 
 
-
     function handleSubmit(event){
         event.preventDefault();
-
-
 
         fetch(`http://localhost:9292/posts`,{
             method: "POST",
@@ -35,7 +35,7 @@ function PostForm ({onAddPost}){
             body: JSON.stringify(formData)
         })
         .then((r) => r.json())
-        .then((newPost) => console.log(newPost))
+        .then((newPost) => onAddPost(newPost))
     }
     
     return (
